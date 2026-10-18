@@ -25,6 +25,9 @@ class Sum:
         self.left = left
         self.right = right
 
+    def times(self, multiplier):
+        return Sum(self.left.times(multiplier), self.right.times(multiplier))
+
     def reduce(self, converter, unit):
         reduced_left = self.left.reduce(converter, unit)
         reduced_right = self.right.reduce(converter, unit)
